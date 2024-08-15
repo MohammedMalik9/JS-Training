@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Calculate age</h1>
+    <h2>Test cases</h2>
+    <button onclick="runtestcases()">Click me</button>
+
+    <p id="test1"></p>
+    <p id="test2"></p>
+    <p id="test3"></p>
+    <p id="test4"></p>
+    <p id="test5"></p>
+
+
+    <script>
+
+        function calculateAge(birthYear, currentYear){
+                if(typeof birthYear !== typeof currentYear){
+                    return"data type mismatched ";
+                }
+
+                if(isNaN (birthYear) || isNaN(currentYear)){
+                    return " please enter a valid input";
+                }
+                if(currentYear < birthYear){
+                    return "current year cannot be earlier then birthyear ";
+                }
+
+                let age = currentYear - birthYear ;
+
+                return " you are "+age+" years old"
+        }
+
+        function runtestcases(){
+            document.getElementById("test1").innerHTML=" Test case 1 (1990, 2024) " + calculateAge(1990, 2024);
+            document.getElementById("test2").innerHTML= " Test case 2 (2000, 1995) " + calculateAge(2000, 1995);
+            document.getElementById("test3").innerHTML = 'Test Case 3 (1995, "2024") ' + calculateAge(1995, "2024");
+            document.getElementById("test4").innerHTML = 'Test Case 4 ("1990", 2024)' + calculateAge("1990", 2024);
+            document.getElementById("test5").innerHTML = 'Test Case 5 ("abcd", "xyz")' + calculateAge("abcd", "xyz");
+        }
+    </script>
+    
+</body>
+</html>
