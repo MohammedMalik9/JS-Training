@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="">string</label>
+    <input type="text" id="strings" placeholder="enter string">
+    <button onclick="analyzeStrings()">click</button>
+    
+    <p id="case1"></p>
+    <p id="case2"></p>
+    <p id="case3"></p>
+    <p id="case4"></p>
+    <p id="case5"></p>
+    <script>
+         function analyzeStrings(){
+            let string = document.getElementById("strings").value
+            let xyz = string.length
+            let Upper = string.toUpperCase();
+            let Lower = string.toLowerCase();
+            // let inc = string.includes(("Javascript"));
+            let course1 = ["JavaScript", "Python", "Nodejs"];
+            let searchTerm = "JavaScript";
+            let found = string.toLowerCase() === searchTerm.toLowerCase();
+            // Check if the user-entered string is in the course array
+            // let found = course1.map(c => c.toLowerCase()).includes(string.toLowerCase());
+        
+            let letter = "a";
+            let count = string.split("").filter(char => char === letter.toLowerCase()).length;
+
+            document.getElementById("case1").innerHTML="the length of the string is: " + xyz;
+            document.getElementById("case2").innerHTML = "The upper cased srting is: " + Upper;
+            document.getElementById("case3").innerHTML = "The upper cased srting is: " + Lower;
+            document.getElementById("case4").innerHTML = " is javascript prensent: " + found;
+            document.getElementById("case5").innerHTML = "The count of a in string is: " + count;
+        }
+
+        // let cName = " Ultimez       ";
+        // console.log(cName);
+        // let y = cName.length;
+        // console.log(y)
+        // let x = cName.trim();
+        // let z = x.length;
+        // console.log(x);
+        // console.log(z);
+
+        // let course = ["Javascript", "Python", "Nodejs"]
+        // console.log(course);
+        // console.log(course.includes("Javascript"));
+
+        // let str = "JavaScript is awesome!";
+        // let letter = "a";
+        // let count = str.split("").filter(char => char === letter).length;
+        // console.log(count)
+
+
+        // let course1 = ["JavaScript", "Python", "Nodejs"];
+        // console.log(course1);
+        // let searchTerm = "javaScript";  
+        // let found = course1.map(c => c.toLowerCase()).includes(searchTerm.toLowerCase());
+
+        // console.log(found); 
+
+
+        function analyzeString(inputString) {
+            //calculating the string length
+    let length = inputString.length;
+
+   //converting the string to lowercase
+    let lowerCase = inputString.toLowerCase();
+
+   //converting the string to yppercase
+    let upperCase = inputString.toUpperCase();
+
+    //checking if the javascript word is present inside the string
+    let containsJavaScript = lowerCase.includes("javascript");
+
+   //counting the number of occurences of a letter 'a'
+    let countOfA = lowerCase.split("").filter(char => char === "a").length;
+
+    // Return an object with the results
+    return {
+        length: length,
+        lowerCase: lowerCase,
+        upperCase: upperCase,
+        containsJavaScript: containsJavaScript,
+        countOfA: countOfA
+    };
+}
+
+// Example usage:
+let result = analyzeString("JavaScript");
+console.log(result);
+    </script>
+</body>
+</html>
