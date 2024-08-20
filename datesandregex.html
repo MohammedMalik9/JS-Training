@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dates and Regex</title>
+  </head>
+  <body>
+    <script>
+      const date = new Date();
+      console.log(date);
+      console.log(date.getFullYear());
+      console.log(date.getMonth());
+      console.log(date.getDay());
+      console.log(date.getHours());
+      console.log(date.getMinutes());
+
+      console.log(date.toDateString("en-US")); // converting date to string
+
+      console.log(date.setDate(date.getDate() + 8)); //gets the timestamps
+      console.log(date.toDateString()); //converting it to string
+
+      const date1 = Date("2001-06-10");
+      const date2 = Date("2024-08-20");
+
+      const datecheck = date1 > date2 ? "earliar" : "Correct";
+      console.log(datecheck);
+
+      //Regex
+
+      let pattern = /dog/;
+      let string = "I have dog ";
+      console.log(pattern.test(string));
+
+      let pattern2 = /\b[cC]\w+/g;
+      let string2 = "i have a cat and u have a cow";
+      console.log(string2.match(pattern2));
+
+      let emails = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      let validEmail1 = "example@example.com";
+      let validEmail2 = "test@ultimez.com";
+      let invalidEmail1 = "mohammedmalik@";
+      let invalidEmail2 = "gmail.com";
+
+      console.log(emails.test(validEmail1)); // true
+      console.log(emails.test(validEmail2)); // true
+      console.log(emails.test(invalidEmail1)); // false
+      console.log(emails.test(invalidEmail2)); // false
+    </script>
+  </body>
+</html>
