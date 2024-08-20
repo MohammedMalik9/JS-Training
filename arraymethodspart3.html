@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Please find Object task in console</h1>
+    <h2>Please find the Set task in console</h2>
+  
+   <span>click me for Map tasks <button onclick="maps()">Map</button></span> 
+
+    <script>
+  function objests(Name, Age, Gender, Occupation){
+
+            return {
+                Name: Name,
+                Age : Age,
+                Gender: Gender,
+                Occupation: Occupation,
+                printDetails : function(){
+                    console.log("Name:",this.Name)
+                    console.log("Age:",this.Age);
+                    console.log("Gender:",this.Gender);
+                    console.log("Occupation:",this.Occupation)
+                }
+            }
+
+
+        }
+
+        
+        var person1 = objests("Jhon", 25, "Male", "SE");
+            var person2 = objests("Johnny", 26, "Male", "Actor");
+
+ person1.printDetails();
+ console.log("\n");
+ person2.printDetails();
+
+
+ function unique(array){
+    return new Set(array);
+ }
+
+ const numbers = [1,2,3,4,4,5,];
+ const uniqueSet = unique(numbers);
+ console.log(uniqueSet);
+
+ 
+
+
+ const set1 = new Set ([1,2,3,4]);
+ const set2 = new Set ([3,4,5,6]);
+
+ function union(setA, setB){
+    return new Set([...setA, ...setB])
+ }
+ console.log("Union:" , union(set1,set2));
+
+ function inter(setA, setB){
+    return new Set([...setA].filter(x => setB.has(x)));
+}
+console.log("InterSection", inter(set1,set2));
+
+
+function subset(setA, setB){
+    return [...setA].every(x => setB.has(x));
+}
+
+console.log("Is Subset:", subset(set1, set2)); 
+
+
+
+// Map 
+
+function mapping(){
+    var fruites = new Map([
+        ["Mango", 600],
+        ["Oranges", 500],
+        ["Banana", 100]
+    ])
+
+    console.log(fruites);
+    fruites.set("grapes", 300);
+    console.log(fruites);
+
+    console.log(fruites.get("Mango"));
+}
+
+function maps(){
+    let mymap = new Map()
+
+    mymap.set('name', 'mark')
+    mymap.set('age', 30);
+    mymap.set('gender','male');
+
+    console.log(mymap);
+
+    let name = mymap.get('name')
+    let age = mymap.get('age');
+    let gender = mymap.get('gender');
+
+    console.log("Name:", name)
+
+    mymap.set('age', 32);
+    console.log("Updated age",mymap.get('age'));
+
+    mymap.delete("gender");
+    console.log("after deleting",mymap);
+}
+    </script>
+</body>
+</html>
