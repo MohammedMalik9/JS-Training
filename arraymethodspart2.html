@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Array Method Continuetion</h1>
+
+    <h3>Please find the output in the console</h3>
+    
+
+    <script>
+           var names = ["John", "Jane", "Doe", "Alice", "Bob"]
+        console.log(names)
+        
+       
+        names.forEach(name =>{
+            console.log(name);
+        })
+        names.splice(names.length,0,"Eve");
+        console.log(names); // addin eve
+        var index = names.indexOf("Doe");
+        if(index !== -1 ){
+            names.splice(index, 1)
+        }
+        // console.log(index)
+        // names.slice("Doe");
+        console.log(names) //removing doe
+
+        names.sort();
+        console.log(names) // soreting in alphbetical order
+
+        var nametoCheck = "Alice"
+       
+        if(names.includes(nametoCheck)){
+            console.log(`${nametoCheck} is present`) // checking alice is prensent
+        }else{
+            console.log(`${nametoCheck} is not presnet`);
+        }
+
+        var upperCaseNames = names.map(name=>name.toUpperCase()); // converting all the names to uppercase 
+        console.log(upperCaseNames);
+    </script>
+</body>
+</html>
