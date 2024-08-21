@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Conditions and Looping statements</h1>
+    <h2>Please find the output in the console</h2>
+
+
+    <script>
+          console.log("'if else conditions'");
+        let num1 = 2
+        let num2 = 3
+        let num = num1-num2;
+        if(num>0){
+            console.log("positive Number")
+        }else if(num ==0){
+            console.log("Number is zero")
+        }else{
+            console.log("Negative Number");
+        }
+
+        console.log("'switch case'")
+        let day = "wednessDay"
+        switch(day){
+            case "Monday":{
+                console.log("its Monday today");
+                break
+            }
+            case "Tuesday":{
+                console.log("its Tuesday today");
+                break
+            }
+            case "Wednessday":{
+                console.log("its Wednessday today");
+                break
+            }
+            case "wednessDay":{
+                console.log("its Wednessday today");
+                break
+            }
+            default : console.log("not a day");
+        }
+        
+        console.log("'for loop'")
+        for( i=0;i<5;i++){
+            console.log(i);
+        }
+
+        console.log("'For in loop'");
+        let details = {cName:"Ultimez" , course:"js"}
+        for(const key in details){
+            console.log(key + ":" + details[key]  );
+        }
+
+        console.log('For of loop');
+        let colors = ["red", "green", "blue"]
+        for(const eachColor of colors){
+            console.log(eachColor + " ");
+        }
+
+        console.log("' while loop'");
+        let numbers = 0
+        while(numbers<3){
+            console.log(numbers);
+            numbers++
+        }
+
+        let number = 0
+        console.log("'do while loop'")
+        do{
+            console.log(number)
+            number++
+        }while(number<3){
+            
+        }
+    </script>
+    
+</body>
+</html>
